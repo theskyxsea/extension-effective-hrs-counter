@@ -1,0 +1,37 @@
+{
+  "name": "Keka Total Effective Hrs Counter",
+  "version": "0.1.0",
+  "description": "It will calculate your total effective hrs",
+  "permissions": ["tabs"],
+  "host_permissions": ["https://*.keka.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.keka.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/bookmark.png",
+        "assets/play.png",
+        "assets/delete.png",
+        "assets/save.png"
+      ],
+      "matches": ["https://*.keka.com/*"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/ext-icon.png",
+      "24": "assets/ext-icon.png",
+      "32": "assets/ext-icon.png"
+    },
+    "default_title": "Effective Hrs Counter",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
